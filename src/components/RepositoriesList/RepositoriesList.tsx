@@ -1,6 +1,7 @@
 import { FC, useState, FormEvent } from "react";
 import { useActions } from "../../hooks/useActioins";
 import { useAppSelector } from "../../hooks/useTypedSelector";
+import "./container.css";
 
 const RepositoriesList: FC = () => {
   const [term, setTerm] = useState("");
@@ -15,15 +16,16 @@ const RepositoriesList: FC = () => {
     searchRepositories(term);
   };
   const content = (
-    <ul>
+    <ul className="list">
       {data.map((npmPackage, i) => (
         <li key={i}>{npmPackage}</li>
       ))}
     </ul>
   );
   return (
-    <div>
-      <form onSubmit={onSubmitHandler}>
+    <div className="container">
+      <h1>Search for a Package</h1>
+      <form onSubmit={onSubmitHandler} className="form">
         <input
           type="text"
           value={term}
