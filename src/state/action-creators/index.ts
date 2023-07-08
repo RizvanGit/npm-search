@@ -3,7 +3,7 @@ import { ActionType } from "../action-types";
 import { UnionAction } from "../actions";
 import { Dispatch } from "redux";
 
-const searchRepositories = (term: string) => {
+export const searchRepositories = (term: string) => {
   return async (dispatch: Dispatch<UnionAction>) => {
     dispatch({ type: ActionType.SEARCH_REPOS });
 
@@ -33,5 +33,3 @@ const searchRepositories = (term: string) => {
     }
   };
 };
-
-export default searchRepositories;
