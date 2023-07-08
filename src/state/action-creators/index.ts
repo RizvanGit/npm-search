@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ActionType } from "../action-types";
-import { Dispatch } from "redux";
 import { UnionAction } from "../actions";
+import { Dispatch } from "redux";
 
 const searchRepositories = (term: string) => {
   return async (dispatch: Dispatch<UnionAction>) => {
@@ -16,7 +16,6 @@ const searchRepositories = (term: string) => {
           },
         },
       );
-
       const names = data.objects.map((result: any) => {
         return result.package.name;
       });
